@@ -39,9 +39,3 @@ if actual_target == 1:
     print("Actual: Heart Disease Present")
 else:
     print("Actual: No Heart Disease")
-
-
-'''
-Preprocessing Pipeline and Reproducibility
-
-Data preprocessing was standardized using StandardScaler for Logistic Regression models. The fitted scaler object was serialized and stored as scaler.pkl using Joblib. During inference, the same scaler is loaded and applied to incoming data before prediction. This ensures that feature transformations remain identical between training and deployment environments, guaranteeing reproducible model behavior.
