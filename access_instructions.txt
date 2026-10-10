@@ -1,0 +1,50 @@
+Heart Disease MLOps Project
+
+Local Testing Instructions
+
+1. Ensure Docker Desktop Kubernetes is running.
+
+2. Deploy application
+
+kubectl apply -f deployment/deployment.yaml
+kubectl apply -f deployment/service.yaml
+
+3. Forward service port
+
+kubectl port-forward service/heart-api-service 8000:80
+
+4. Open Swagger UI
+
+http://localhost:8000/docs
+
+5. Test prediction endpoint
+
+Use POST /predict with patient data in JSON format.
+
+Example:
+
+{
+  "age": 63,
+  "sex": 1,
+  "cp": 3,
+  "trestbps": 145,
+  "chol": 233,
+  "fbs": 1,
+  "restecg": 0,
+  "thalach": 150,
+  "exang": 0,
+  "oldpeak": 2.3,
+  "slope": 0,
+  "ca": 0,
+  "thal": 1
+}
+
+6. View logs
+
+kubectl logs <pod-name>
+
+7. View application status
+
+kubectl get pods
+kubectl get deployments
+kubectl get services
