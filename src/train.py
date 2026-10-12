@@ -9,8 +9,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 
-mlflow.set_tracking_uri("sqlite:///mlflow.db")
-
 # Load dataset
 df = pd.read_csv("data/processed/heart_clean.csv")
 
