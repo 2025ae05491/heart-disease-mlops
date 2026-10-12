@@ -1,5 +1,9 @@
 from ucimlrepo import fetch_ucirepo
 import pandas as pd
+from pathlib import Path
+
+# Create directory if it doesn't exist
+Path("data/raw").mkdir(parents=True, exist_ok=True)
 
 heart_disease = fetch_ucirepo(id=45)
 
